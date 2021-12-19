@@ -2,41 +2,48 @@
 
 SLIDE 2
 
-    #include <iostream>
-    #include <string>
-    #include <array>
-    #include <math.h>
-    using namespace std;
+	#include <iostream>
+	#include <string>
+	#include <array>
+	#include <math.h>
+	using namespace std;
 
-    string rootValues(double n)
-    {
+	string rootValues(double numB)
+	{
 
-      for (int i(10); i > 0; i--)
-      {
-        double powValue = (1.0 / i);
-        cout << n << " to the root of " << i << " is: " << pow(n, powValue) << endl;
-      }
-      
-      return "\nThe code is completed.";
+		cout << "\nThe root from 1-10 is: " << endl;
 
-    }
+		double numA = 1;
 
-    int main()
-    {
-      double number; //variable to store user response
-      cout << "Enter a number: "; //ask the user for an input
-      cin >> number; //get user input
-      while (cin.fail()) //error handling
-      {
-        cin.clear();
-        cin.ignore(1000, '\n');
-        cout << "Invalid input. Enter the number again: ";
-        cin >> number;
-      }
+		do
+		{
+			cout << "[" << numA << "]" << " root value for " << numB << " is: ";
+			double x = 1 / numA;
+			double result = pow(numB, x);
+			cout << result << endl;
+			numA++;
+		} while (numA != 11);
 
-      //output string returned by function
-      cout << rootValues(number);
-    }
+		return "\nThe code is completed.";
+
+	}
+
+	int main()
+	{
+		double number; //variable to store user response
+		cout << "Enter a number: "; //ask the user for an input
+		cin >> number; //get user input
+		while (cin.fail()) //error handling
+		{
+			cin.clear();
+			cin.ignore(1000, '\n');
+			cout << "Invalid input. Enter the number again: ";
+			cin >> number;
+		}
+
+		//output string returned by function
+		cout << rootValues(number);
+	}
 
 SLIDE 3
 
@@ -46,14 +53,19 @@ SLIDE 3
 	#include <math.h>
 	using namespace std;
 
-	string exponentValues(double n)
+	string exponentValues(double numB)
 	{
+		cout << "\nThe exponent from 1-10 is: " << endl;
 
-		for (int i(10); i > 0; i--)
+		double numA = 1;
+
+		do
 		{
-			double result = pow(n, i);
-			cout << n << "^" << i << " is: " << result << endl;
-		}
+			cout << "[" << numA << "]" << " exponent value for " << numB << " is: ";
+
+			cout << pow(numB, numA) << endl;
+			numA++;
+		} while (numA != 11);
 
 		return "\nThe code is completed.";
 
